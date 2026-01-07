@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head as before + Bootstrap + Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Common styles and nav -->
+</head>
+<body>
+    <!-- Navigation here -->
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Insights & Analytics</h1>
+            <p class="lead">Data-Driven Excellence in Artist Promotion</p>
+            <p class="slogan">Reality is the slogan for this great website</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <img src="https://www.shutterstock.com/image-vector/elegant-heraldic-eagle-crest-logo-260nw-2660951739.jpg" class="img-fluid rounded mb-4" alt="Corporate Eagle Logo Blue Gold">
+                    <h2 class="accent-gold">Hot Analytics Powered by Advanced LLM Intelligence</h2>
+                    <p>As of January 2026, our proprietary LLM analytics reveal explosive growth potential in the artist promotion sector. Press campaigns yield an average 285% ROI in media exposure within the first quarter.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="growthChart"></canvas>
+                    <p class="mt-3"><strong>LLM Insight:</strong> Artist visibility surges 45% in Q1 2026 due to targeted press strategies — reality backed by data.</p>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="engagementChart"></canvas>
+                    <p class="mt-3"><strong>LLM Insight:</strong> Engagement rates peak in social amplification phases, confirming precision outreach as the key driver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with slogan -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="slogan">Reality is the slogan for this great website</p>
+            <p>&copy; 2026 Nexora Corporation. All Rights Reserved. | Powered by Nostrix Studios & Yoyngth</p>
+        </div>
+    </footer>
+
+    <script>
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'line',
+            data: {
+                labels: ['Oct 2025', 'Nov', 'Dec', 'Jan 2026', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Artist Media Reach Growth (%)',
+                    data: [12, 28, 45, 78, 112, 145],
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                    tension: 0.4
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true } } }
+        });
+
+        const engagementCtx = document.getElementById('engagementChart').getContext('2d');
+        new Chart(engagementCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Press Releases', 'Interviews', 'Social Campaigns', 'Features'],
+                datasets: [{
+                    label: 'Engagement Rate (%)',
+                    data: [62, 81, 93, 88],
+                    backgroundColor: '#003366'
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+    </script>
+</body>
+</html>
